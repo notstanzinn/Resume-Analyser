@@ -6,7 +6,7 @@ import Signup from "./features/auth/pages/Signup.jsx"
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Navigate to="/login" replace /> 
+        element: <h1>Home Page</h1> 
     },
     {
         path: "/login",
