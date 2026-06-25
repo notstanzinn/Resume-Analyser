@@ -1,0 +1,38 @@
+services:
+  # ──────────────────────────────────────────────
+  # Backend — Node.js / Express Web Service
+  # ──────────────────────────────────────────────
+  - type: web
+    name: resume-analyser-backend
+    runtime: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false          # Set manually in Render dashboard
+      - key: JWT_SECRET
+        sync: false          # Set manually in Render dashboard
+      - key: GOOGLE_GENAI_API_KEY
+        sync: false          # Set manually in Render dashboard
+      - key: FRONTEND_URL
+        sync: false          # Set to your frontend's Render URL after it is deployed
+
+  # ──────────────────────────────────────────────
+  # Frontend — React / Vite Static Site
+  # ──────────────────────────────────────────────
+  - type: web
+    name: resume-analyser-frontend
+    runtime: static
+    rootDir: Frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false          # Set to your backend's Render URL (e.g. https://resume-analyser-backend.onrender.com)
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
