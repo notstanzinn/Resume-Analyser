@@ -8,8 +8,7 @@ A full-stack AI-powered web application that analyses your resume against a job 
 
 | Service | URL |
 |---|---|
-| **Frontend** | [resume-analyser.vercel.app](https://resume-analyser.vercel.app) |
-| **Backend API** | [resume-analyser-backend-53rl.onrender.com](https://resume-analyser-backend-53rl.onrender.com) |
+| **Demo** | [Resume-Analyser](https://resume-analyser-frontend-lduc.onrender.com) |
 
 ---
 
@@ -311,6 +310,4 @@ VITE_API_URL=https://your-backend.onrender.com
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+Built by notstanzinn
